@@ -286,7 +286,7 @@ public class JdbcAnonymizerService {
     }
 
     private long getRowCount(Table table) throws SQLException {
-        String select = "select count(1) from " + table.getName();
+        String select = "select count(1) from `" + table.getName() + "`";
         Statement statement = null;
         ResultSet results = null;
 
@@ -341,7 +341,7 @@ public class JdbcAnonymizerService {
         }
 
         select = select.substring(0, select.lastIndexOf(", "));
-        select += " from " + table.getName();
+        select += " from `" + table.getName() + "`";
         return select;
     }
 
