@@ -5,6 +5,8 @@ import com.rolfje.anonimatron.synonyms.Synonym;
 
 import java.util.Map;
 import java.util.Random;
+import java.util.*;
+
 
 /**
  * Generates an output string based on the configured characters
@@ -41,7 +43,10 @@ public class CharacterStringAnonymizer implements Anonymizer {
 
     @Override
     public Synonym anonymize(Object from, int size, boolean shortlived) {
-        return anonymize(from, size, shortlived, CHARS);
+        Map<String, String> defaultParameters = new HashMap<>();
+        defaultParameters.put(PARAMETER, CHARS);
+
+        return anonymize(from, size, shortlived, defaultParameters);
     }
 
     private Synonym anonymize(Object from, int size, boolean shortlived, String characters) {

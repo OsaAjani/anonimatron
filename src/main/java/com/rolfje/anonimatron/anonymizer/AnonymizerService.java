@@ -38,6 +38,10 @@ public class AnonymizerService {
 		registerAnonymizer(new IPAddressV4Anonymizer());
 
 		registerAnonymizer(new CountryCodeAnonymizer());
+		registerAnonymizer(new FixedValueAnonymizer());
+		registerAnonymizer(new PhoneNumberAnonymizer());
+		registerAnonymizer(new LoremIpsumGenerator());
+
 
 		// Default anonymizers for plain Java objects. If we really don't
 		// know or care how the data looks like.
